@@ -797,12 +797,19 @@
 				  console.error(error);
 				}
 
-                                if (objProject.settings_data.integrations.trello.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('TRELLO Integration Set');
-                                } else {
-                                    console.log('No TRELLO Integration Set');
-                                }
+				try {
+
+	                                if (objProject.settings_data.integrations.trello.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('TRELLO Integration Set');
+	                                } else {
+	                                    console.log('No TRELLO Integration Set');
+	                                }
+					
+				} catch (error) {
+				  console.error(error);
+				}								
+
 
                                 if (objProject.settings_data.integrations.asana.enabled == true) {
                                     bolIssueMngt = true;
