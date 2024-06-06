@@ -766,20 +766,26 @@
 
 
                                 console.log('***************** Source Control *****************');
-                                if (objProject.settings_data.scm_provider == "" || objProject.settings_data.scm_provider == undefined) {
-                                    console.log('No Source Control Set');
-                                } else {
-                                    bolSourceControl = true;
-                                    console.log(objProject.settings_data.scm_provider + ' Source Control Set');
-                                }
 
-                                if (objProject.settings_data.auto_owner_from_git_blame == "" || objProject.settings_data.auto_owner_from_git_blame == undefined) {
-                                    console.log('No SGIT Blame Owner Set');
-                                } else {
-                                    bolSourceControl = true;
-                                    console.log('GIT Blame Owner Auto Suggest Set');
-                                }
+				try {
 
+	                                if (objProject.settings_data.scm_provider == "" || objProject.settings_data.scm_provider == undefined) {
+	                                    console.log('No Source Control Set');
+	                                } else {
+	                                    bolSourceControl = true;
+	                                    console.log(objProject.settings_data.scm_provider + ' Source Control Set');
+	                                }
+	
+	                                if (objProject.settings_data.auto_owner_from_git_blame == "" || objProject.settings_data.auto_owner_from_git_blame == undefined) {
+	                                    console.log('No SGIT Blame Owner Set');
+	                                } else {
+	                                    bolSourceControl = true;
+	                                    console.log('GIT Blame Owner Auto Suggest Set');
+	                                }
+								
+				} catch (error) {
+				  console.error(error);
+				}
 
 
                                 console.log('***************** Issue Mngt *****************');
@@ -793,17 +799,67 @@
 	                                    console.log('No JIRA Integration Set');
 	                                }
 					
-				} catch (error) {
-				  console.error(error);
-				}
-
-				try {
-
 	                                if (objProject.settings_data.integrations.trello.enabled == true) {
 	                                    bolIssueMngt = true;
 	                                    console.log('TRELLO Integration Set');
 	                                } else {
 	                                    console.log('No TRELLO Integration Set');
+	                                }
+
+	                                if (objProject.settings_data.integrations.asana.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('ASANA Integration Set');
+	                                } else {
+	                                    console.log('No ASANA Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.azuredevops.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('AZUREDEVOPS Integration Set');
+	                                } else {
+	                                    console.log('No AZUREDEVOPS Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.github.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('GITHUB Integration Set');
+	                                } else {
+	                                    console.log('No GITHUB Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.gitlab.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('GITLAB Integration Set');
+	                                } else {
+	                                    console.log('No GITLAB Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.bitbucket.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('BITBUCKET Integration Set');
+	                                } else {
+	                                    console.log('No BITBUCKET Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.campfire.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('CAMPFIRE Integration Set');
+	                                } else {
+	                                    console.log('No CAMPFIRE Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.clubhouse.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('CLUBHOUSE Integration Set');
+	                                } else {
+	                                    console.log('No CLUBHOUSE Integration Set'); 
+	                                }
+	
+	                                if (objProject.settings_data.integrations.pivotal.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('PIVOTAL Integration Set');
+	                                } else {
+	                                    console.log('No PIVOTAL Integration Set');
 	                                }
 					
 				} catch (error) {
@@ -811,115 +867,68 @@
 				}								
 
 
-                                if (objProject.settings_data.integrations.asana.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('ASANA Integration Set');
-                                } else {
-                                    console.log('No ASANA Integration Set');
-                                }
 
-                                if (objProject.settings_data.integrations.azuredevops.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('AZUREDEVOPS Integration Set');
-                                } else {
-                                    console.log('No AZUREDEVOPS Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.github.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('GITHUB Integration Set');
-                                } else {
-                                    console.log('No GITHUB Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.gitlab.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('GITLAB Integration Set');
-                                } else {
-                                    console.log('No GITLAB Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.bitbucket.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('BITBUCKET Integration Set');
-                                } else {
-                                    console.log('No BITBUCKET Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.campfire.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('CAMPFIRE Integration Set');
-                                } else {
-                                    console.log('No CAMPFIRE Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.clubhouse.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('CLUBHOUSE Integration Set');
-                                } else {
-                                    console.log('No CLUBHOUSE Integration Set'); 
-                                }
-
-                                if (objProject.settings_data.integrations.pivotal.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('PIVOTAL Integration Set');
-                                } else {
-                                    console.log('No PIVOTAL Integration Set');
-                                }
 
 
 
                                 console.log('***************** Alert Mngt *****************');
 
-                                if (objProject.settings_data.integrations.opsgenie.enabled == true) {
-                                    bolAlerting = true;
-                                    console.log('OPSGENIE Integration Set');
-                                } else {
-                                    console.log('No OPSGENIE Integration Set');
-                                }
+				try {
 
-                                if (objProject.settings_data.integrations.pagerduty.enabled == true) {
-                                    bolAlerting = true;
-                                    console.log('PAGERDUTY Integration Set');
-                                } else {
-                                    console.log('No PAGERDUTY Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.victorops.enabled == true) {
-                                    bolAlerting = true;
-                                    console.log('VICTOROPS Integration Set');
-                                } else {
-                                    console.log('No VICTOROPS Integration Set');
-                                }
-
-                                if (objProject.settings_data.integrations.datadog.enabled == true) {
-                                    bolAlerting = true;
-                                    console.log('DATADOG Integration Set');
-                                } else {
-                                    console.log('No DATADOG Integration Set');
-                                }
-
-
-
-
-
-
+	                                if (objProject.settings_data.integrations.opsgenie.enabled == true) {
+	                                    bolAlerting = true;
+	                                    console.log('OPSGENIE Integration Set');
+	                                } else {
+	                                    console.log('No OPSGENIE Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.pagerduty.enabled == true) {
+	                                    bolAlerting = true;
+	                                    console.log('PAGERDUTY Integration Set');
+	                                } else {
+	                                    console.log('No PAGERDUTY Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.victorops.enabled == true) {
+	                                    bolAlerting = true;
+	                                    console.log('VICTOROPS Integration Set');
+	                                } else {
+	                                    console.log('No VICTOROPS Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.datadog.enabled == true) {
+	                                    bolAlerting = true;
+	                                    console.log('DATADOG Integration Set');
+	                                } else {
+	                                    console.log('No DATADOG Integration Set');
+	                                }
+					
+				} catch (error) {
+				  console.error(error);
+				}
+								
                                 console.log('***************** Messaging Mngt *****************');
 
-                                if (objProject.settings_data.integrations.slack.enabled == true) {
-                                    bolMessaging = true;
-                                    console.log('SLACK Integration Set');
-                                } else {
-                                    console.log('No SLACK Integration Set');
-                                }
+				try {
 
-                                if (objProject.settings_data.integrations.email.enabled == true) {
-                                    bolMessaging = true;
-                                    console.log('EMAIL Integration Set');
-                                } else {
-                                    console.log('No EMAIL Integration Set'); 
-                                }
-
+	                                if (objProject.settings_data.integrations.slack.enabled == true) {
+	                                    bolMessaging = true;
+	                                    console.log('SLACK Integration Set');
+	                                } else {
+	                                    console.log('No SLACK Integration Set');
+	                                }
+	
+	                                if (objProject.settings_data.integrations.email.enabled == true) {
+	                                    bolMessaging = true;
+	                                    console.log('EMAIL Integration Set');
+	                                } else {
+	                                    console.log('No EMAIL Integration Set'); 
+	                                }
+					
+				} catch (error) {
+				  console.error(error);
+				}
+								
 
                                 //Lets determine the status of the project
                                 //Email and Slack (Critical)
