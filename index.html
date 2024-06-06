@@ -730,7 +730,7 @@
 						var varIsNeedsAttention = false;
 
 						var bolSourceControl = false;
-                        var bolIssueMngt = false;
+                                  		var bolIssueMngt = false;
 						var bolAlerting = false;
 						var bolMessaging = false;
 
@@ -742,18 +742,18 @@
                         //Loop over returned data to populated users dropdowns
                         for (var objProject of jsonData.result) {
 
-							//Reset variables 
-                            varIsUrgent = false;
-                            varIsNeedsAttention = false;
-							varIsGoodSetup = false;
+			//Reset variables 
+		    	varIsUrgent = false;
+		    	varIsNeedsAttention = false;
+		    	varIsGoodSetup = false;
 
-                            bolSourceControl = false;
-                            bolIssueMngt = false;
-                            bolAlerting = false;
-                            bolMessaging = false;
+		    	bolSourceControl = false;
+		    	bolIssueMngt = false;
+		    	bolAlerting = false;
+		    	bolMessaging = false;
 
-                            varUrgentSpan = "";
-                            varNeedsAttSpan = "";
+		    	varUrgentSpan = "";
+		    	varNeedsAttSpan = "";
 
 
 
@@ -784,12 +784,18 @@
 
                                 console.log('***************** Issue Mngt *****************');
 
-                                if (objProject.settings_data.integrations.jira.enabled == true) {
-                                    bolIssueMngt = true;
-                                    console.log('JIRA Integration Set');
-                                } else {
-                                    console.log('No JIRA Integration Set');
-                                }
+				try {
+
+	                                if (objProject.settings_data.integrations.jira.enabled == true) {
+	                                    bolIssueMngt = true;
+	                                    console.log('JIRA Integration Set');
+	                                } else {
+	                                    console.log('No JIRA Integration Set');
+	                                }
+					
+				} catch (error) {
+				  console.error(error);
+				}
 
                                 if (objProject.settings_data.integrations.trello.enabled == true) {
                                     bolIssueMngt = true;
